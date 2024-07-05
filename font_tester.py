@@ -5,6 +5,7 @@ with open("pyfiglet_fonts.txt", "r", encoding="utf-8") as file:
     fonts = file.read().splitlines()
 
 def test_fonts(fonts, text, width):
+    output_file = f"outputs/{text}.txt"
     with open(output_file, "w", encoding="utf-8") as out_file:
         for font in fonts:
             out_file.write(f"{font}--------------------------\n\n")
@@ -13,7 +14,6 @@ def test_fonts(fonts, text, width):
             out_file.write("\n--------------------------------\n\n")
     
 if __name__ == "__main__":
-    text = ""
+    text = "tam"
     width = 200
-    output_file = "output.txt"
     test_fonts(fonts, text, width)
